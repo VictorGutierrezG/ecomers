@@ -1,78 +1,85 @@
 <template>
-  <b-container class="login-container d-flex justify-content-center align-items-center">
-    <b-card title="Login" class="w-50">
-      <b-form @submit.prevent="handleLogin">
-        <b-form-group label="Username" label-for="username">
-          <b-form-input
-            id="username"
-            v-model="username"
-            type="text"
-            placeholder="Enter your username"
-            required
-          />
-        </b-form-group>
+  <b-container class="mt-5">
+    <b-row align-h="center">
+      <b-col cols="12" md="6">
+        <b-card title="Login" class="text-center">
+          <b-form @submit.prevent="handleLogin">
+            <b-form-group label="Username" label-for="username">
+              <b-form-input
+                id="username"
+                v-model="username"
+                type="text"
+                required
+                placeholder="Enter your username"
+              ></b-form-input>
+            </b-form-group>
 
-        <b-form-group label="Password" label-for="password">
-          <b-form-input
-            id="password"
-            v-model="password"
-            type="password"
-            placeholder="Enter your password"
-            required
-          />
-        </b-form-group>
+            <b-form-group label="Password" label-for="password" class="mt-3">
+              <b-form-input
+                id="password"
+                v-model="password"
+                type="password"
+                required
+                placeholder="Enter your password"
+              ></b-form-input>
+            </b-form-group>
 
-        <b-button type="submit" variant="primary" class="w-100">
-          Login
-        </b-button>
-      </b-form>
+            <b-button type="submit" variant="primary" class="mt-3 w-100">
+              Login
+            </b-button>
 
-      <b-alert v-if="error" variant="danger" dismissible>
-        {{ error }}
-      </b-alert>
-    </b-card>
+            <b-alert
+              v-if="errorMessage"
+              variant="danger"
+              show
+              class="mt-3"
+            >
+              {{ errorMessage }}
+            </b-alert>
+          </b-form>
+        </b-card>
+      </b-col>
+    </b-row>
   </b-container>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import { getModule } from 'vuex-module-decorators';
-import Auth from '~/store/auth';
-import store from '~/store'; // Importamos la instancia del store
-
-// Obtenemos el módulo de autenticación
-const authModule = getModule(Auth, store);
+import { mapActions } from 'vuex';
 
 export default defineComponent({
-  name: 'Login',
   data() {
     return {
       username: '',
       password: '',
-      error: null as string | null,
+      errorMessage: ''
     };
   },
   methods: {
+    // Mapeamos la acción de login desde el módulo 'auth' en Vuex
+    ...mapActions('auth', {
+      login: 'login'  // Mapeamos la acción 'login' del módulo 'auth' al método 'login' local
+    }),
     async handleLogin() {
       try {
-        console.log('Login: Intentando iniciar sesión con', this.username);
-        await authModule.login({
-          username: this.username,
-          password: this.password,
-        });
-        console.log('Login: Autenticación exitosa, redirigiendo...');
+        // Llamamos a la acción login de Vuex
+        await this.login({ username: this.username, password: this.password });
+        // Redirigir al usuario a la página de productos después del inicio de sesión exitoso
         this.$router.push('/products');
-      } catch (e) {
-        console.error('Login: Error en login:', e);
-        this.error = 'Login failed. Please check your credentials.';
+      } catch (error) {
+        // En caso de error de credenciales
+        this.errorMessage = 'Invalid username or password. Please try again.';
       }
-    },
-  },
+    }
+  }
 });
 </script>
 
 <style scoped>
-.login-container {
-  min-height: 100vh;
+.container {
+  margin-top: 50px;
+}
+.card {
+  border: 1px solid #ccc;
 }
 </style>

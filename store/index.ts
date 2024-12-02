@@ -3,7 +3,7 @@ import Vuex from 'vuex';
 
 Vue.use(Vuex);
 
-// Creamos una nueva instancia de Vuex Store
-const store = new Vuex.Store({});
-
-export default store;
+// Crear y exportar una función que devuelva la instancia de Vuex Store
+export default () => {
+  return new Vuex.Store({});
+};
