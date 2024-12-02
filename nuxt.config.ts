@@ -32,6 +32,7 @@ export default {
       }
     }
   },
+  store: true,
   components: true // Habilitar importación automática de componentes
 };
 

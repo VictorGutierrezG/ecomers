@@ -56,18 +56,14 @@ export default defineComponent({
     };
   },
   methods: {
-    // Mapeamos la acción de login desde el módulo 'auth' en Vuex
     ...mapActions('auth', {
-      login: 'login'  // Mapeamos la acción 'login' del módulo 'auth' al método 'login' local
+      login: 'login'
     }),
     async handleLogin() {
       try {
-        // Llamamos a la acción login de Vuex
         await this.login({ username: this.username, password: this.password });
-        // Redirigir al usuario a la página de productos después del inicio de sesión exitoso
         this.$router.push('/products');
       } catch (error) {
-        // En caso de error de credenciales
         this.errorMessage = 'Invalid username or password. Please try again.';
       }
     }

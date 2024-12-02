@@ -1,9 +1,10 @@
-import Vue from 'vue';
 import Vuex from 'vuex';
+import CartModule from './cart';
 
-Vue.use(Vuex);
-
-// Crear y exportar una función que devuelva la instancia de Vuex Store
 export default () => {
-  return new Vuex.Store({});
+  return new Vuex.Store({
+    modules: {
+      cart: CartModule,
+    },
+  });
 };
