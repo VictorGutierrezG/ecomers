@@ -1626,15 +1626,15 @@
     "@types/webpack-bundle-analyzer" "3.9.5"
     "@types/webpack-hot-middleware" "2.25.5"
 
-"@nuxt/typescript-build@^2.1.0":
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/@nuxt/typescript-build/-/typescript-build-2.1.0.tgz#191fe60e942ce84a01468ba6e255744e01c7c538"
-  integrity sha512-7TLMpfzgOckf3cBkzoPFns6Xl8FzY6MoFfm/5HUE47QeTWAdOG9ZFxMrVhHWieZHYUuV+k6byRtaRv4S/3R8zA==
+"@nuxt/typescript-build@^3.0.2":
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/@nuxt/typescript-build/-/typescript-build-3.0.2.tgz#3bc9db607c83207f8dcbd8790a579710eb87469b"
+  integrity sha512-IFSznjafW5xm0XHg9Q9aHVW7i9J2pAYfyorh3ro3Pf0OnCbS0acmwBnp2juza+DqNhZa1DhNentmUsgiYp730g==
   dependencies:
-    consola "^2.15.3"
-    fork-ts-checker-webpack-plugin "^6.1.1"
-    ts-loader "^8.0.17"
-    typescript "~4.2"
+    consola "^3.0.0"
+    defu "^6.0.0"
+    fork-ts-checker-webpack-plugin "6.5.3"
+    ts-loader "8.4.0"
 
 "@nuxt/utils@2.18.1":
   version "2.18.1"
@@ -2759,6 +2759,13 @@ axios-retry@^3.1.9:
     "@babel/runtime" "^7.15.4"
     is-retry-allowed "^2.2.0"
 
+axios@0.26.1:
+  version "0.26.1"
+  resolved "https://registry.yarnpkg.com/axios/-/axios-0.26.1.tgz#1ede41c51fcf51bbbd6fd43669caaa4f0495aaa9"
+  integrity sha512-fPwcX4EvnSHuInCMItEhAGnaSEXRBjtzh9fOtsE6E1G6p7vl7edEeZe11QHf18+6+9gR5PbKV/sGKNaD8YaMeA==
+  dependencies:
+    follow-redirects "^1.14.8"
+
 axios@^0.21.1:
   version "0.21.4"
   resolved "https://registry.yarnpkg.com/axios/-/axios-0.21.4.tgz#c67b90dc0568e5c1cf2b0b858c43ba28e2eda575"
@@ -3437,7 +3444,7 @@ consola@^2.15.0, consola@^2.15.3:
   resolved "https://registry.yarnpkg.com/consola/-/consola-2.15.3.tgz#2e11f98d6a4be71ff72e0bdf07bd23e12cb61550"
   integrity sha512-9vAdYbHj6x2fLKC4+oPH0kFzY/orMZyG2Aj+kNylHxKGJ/Ed4dpNyAQYwJOdqO4zdM7XpVHmyejQDcQHrnuXbw==
 
-consola@^3.2.3:
+consola@^3.0.0, consola@^3.2.3:
   version "3.2.3"
   resolved "https://registry.yarnpkg.com/consola/-/consola-3.2.3.tgz#0741857aa88cfa0d6fd53f1cff0375136e98502f"
   integrity sha512-I5qxpzLv+sJhTVEoLYNcTW+bThDCPsit0vLNKShZx6rLtpilNpmmeTPaeqJb9ZE9dV3DGaeby6Vuhrw38WjeyQ==
@@ -4907,7 +4914,7 @@ flush-write-stream@^1.0.0:
     inherits "^2.0.3"
     readable-stream "^2.3.6"
 
-follow-redirects@^1.0.0, follow-redirects@^1.14.0:
+follow-redirects@^1.0.0, follow-redirects@^1.14.0, follow-redirects@^1.14.8:
   version "1.15.9"
   resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.15.9.tgz#a604fa10e443bf98ca94228d9eebcc2e8a2c8ee1"
   integrity sha512-gew4GsXizNgdoRyqmyfMHyAmXsZDk6mHkSxZFCzW9gwlbtOW44CDtYavM+y+72qD/Vq2l550kMF52DT8fOLJqQ==
@@ -4924,7 +4931,7 @@ for-in@^1.0.2:
   resolved "https://registry.yarnpkg.com/for-in/-/for-in-1.0.2.tgz#81068d295a8142ec0ac726c6e2200c30fb6d5e80"
   integrity sha512-7EwmXrOjyL+ChxMhmG5lnW9MPt1aIeZEwKhQzoBUdTV0N3zuwWDZYVJatDvZ2OyzPUvdIAZDsCetk3coyMfcnQ==
 
-fork-ts-checker-webpack-plugin@^6.1.1:
+fork-ts-checker-webpack-plugin@6.5.3:
   version "6.5.3"
   resolved "https://registry.yarnpkg.com/fork-ts-checker-webpack-plugin/-/fork-ts-checker-webpack-plugin-6.5.3.tgz#eda2eff6e22476a2688d10661688c47f611b37f3"
   integrity sha512-SbH/l9ikmMWycd5puHJKTkZJKddF4iRLyW3DeZ08HTI7NGyLS38MXd/KGgeWumQO7YNQbW2u/NtPT2YowbPaGQ==
@@ -9297,7 +9304,7 @@ tree-dump@^1.0.1:
   resolved "https://registry.yarnpkg.com/tree-dump/-/tree-dump-1.0.2.tgz#c460d5921caeb197bde71d0e9a7b479848c5b8ac"
   integrity sha512-dpev9ABuLWdEubk+cIaI9cHwRNNDjkBBLXTwI4UCUFdQ5xXKqNXoK4FEciw/vxf+NQ7Cb7sGUyeUtORvHIdRXQ==
 
-ts-loader@^8.0.17:
+ts-loader@8.4.0:
   version "8.4.0"
   resolved "https://registry.yarnpkg.com/ts-loader/-/ts-loader-8.4.0.tgz#e845ea0f38d140bdc3d7d60293ca18d12ff2720f"
   integrity sha512-6nFY3IZ2//mrPc+ImY3hNWx1vCHyEhl6V+wLmL4CZcm6g1CqX7UKrkc6y0i4FwcfOhxyMPCfaEvh20f4r9GNpw==
@@ -9422,10 +9429,10 @@ typedarray@^0.0.6:
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
   integrity sha512-/aCDEGatGvZ2BIk+HmLf4ifCJFwvKFNb9/JeZPMulfgFracn9QFcAf5GO8B/mweUjSoblS5In0cWhqpfs/5PQA==
 
-typescript@~4.2:
-  version "4.2.4"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.2.4.tgz#8610b59747de028fda898a8aef0e103f156d0961"
-  integrity sha512-V+evlYHZnQkaz8TRBuxTA92yZBPotr5H+WhQ7bD3hZUndx5tGOa1fuCgeSjxAzM1RiN5IzvadIXTVefuuwZCRg==
+typescript@^5.7.2:
+  version "5.7.2"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-5.7.2.tgz#3169cf8c4c8a828cde53ba9ecb3d2b1d5dd67be6"
+  integrity sha512-i5t66RHxDvVN40HfDd1PsEThGNnlMCMT3jMUuoh9/0TaqWevNontacunWyN02LA9/fIbEWlcHZcgTKb9QoaLfg==
 
 ua-parser-js@^1.0.38:
   version "1.0.39"
@@ -9634,6 +9641,11 @@ vm-browserify@^1.0.1:
   resolved "https://registry.yarnpkg.com/vm-browserify/-/vm-browserify-1.1.2.tgz#78641c488b8e6ca91a75f511e7a3b32a86e5dda0"
   integrity sha512-2ham8XPWTONajOR0ohOKOHXkm3+gaBmGut3SRuu75xLd/RRaY6vqgh8NBYYk7+RW3u5AtzPQZG8F10LHkl0lAQ==
 
+vue-class-component@^7.2.6:
+  version "7.2.6"
+  resolved "https://registry.yarnpkg.com/vue-class-component/-/vue-class-component-7.2.6.tgz#8471e037b8e4762f5a464686e19e5afc708502e4"
+  integrity sha512-+eaQXVrAm/LldalI272PpDe3+i4mPis0ORiMYxF6Ae4hyuCh15W8Idet7wPUEs4N4YptgFHGys4UrgNQOMyO6w==
+
 vue-client-only@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/vue-client-only/-/vue-client-only-2.1.0.tgz#1a67a47b8ecacfa86d75830173fffee3bf8a4ee3"
@@ -9685,6 +9697,11 @@ vue-no-ssr@^1.1.1:
   resolved "https://registry.yarnpkg.com/vue-no-ssr/-/vue-no-ssr-1.1.1.tgz#875f3be6fb0ae41568a837f3ac1a80eaa137b998"
   integrity sha512-ZMjqRpWabMPqPc7gIrG0Nw6vRf1+itwf0Itft7LbMXs2g3Zs/NFmevjZGN1x7K3Q95GmIjWbQZTVerxiBxI+0g==
 
+vue-property-decorator@^9.1.2:
+  version "9.1.2"
+  resolved "https://registry.yarnpkg.com/vue-property-decorator/-/vue-property-decorator-9.1.2.tgz#266a2eac61ba6527e2e68a6933cfb98fddab5457"
+  integrity sha512-xYA8MkZynPBGd/w5QFJ2d/NM0z/YeegMqYTphy7NJQXbZcuU6FC6AOdUAcy4SXP+YnkerC6AfH+ldg7PDk9ESQ==
+
 vue-router@^3.6.5:
   version "3.6.5"
   resolved "https://registry.yarnpkg.com/vue-router/-/vue-router-3.6.5.tgz#95847d52b9a7e3f1361cb605c8e6441f202afad8"
@@ -9732,6 +9749,16 @@ vue@^2.7.10, vue@^2.7.16:
   dependencies:
     "@vue/compiler-sfc" "2.7.16"
     csstype "^3.1.0"
+
+vuex-class@^0.3.2:
+  version "0.3.2"
+  resolved "https://registry.yarnpkg.com/vuex-class/-/vuex-class-0.3.2.tgz#c7e96a076c1682137d4d23a8dcfdc63f220e17a8"
+  integrity sha512-m0w7/FMsNcwJgunJeM+wcNaHzK2KX1K1rw2WUQf7Q16ndXHo7pflRyOV/E8795JO/7fstyjH3EgqBI4h4n4qXQ==
+
+vuex-module-decorators@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/vuex-module-decorators/-/vuex-module-decorators-2.0.0.tgz#46fa63cc38496cf5655853a3193e53c1f2557ebc"
+  integrity sha512-awfjlJR9PlX2tDNzRk5fUnksO4TC5Z93Q3ZycvROCiLId7MZ1GdY4sHpEvPqm02UZ8jF+BkuyN5ezghOAk3zeQ==
 
 vuex@^3.6.2:
   version "3.6.2"
